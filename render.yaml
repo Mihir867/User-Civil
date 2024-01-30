@@ -1,0 +1,15 @@
+services:
+  - name: server
+    type: web
+    buildCommand: npm install
+    startCommand: node server.js
+
+  - name: client
+    type: web
+    buildCommand: |
+      cd client
+      npm install
+      npm run build
+    startCommand: |
+      cd client
+      npm start
